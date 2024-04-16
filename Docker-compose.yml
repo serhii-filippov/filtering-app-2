@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+# Api Service
+  api:
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    # volumes:
+    #     - ./:/app
+    #     - /app/node_modules
+    ports:
+        - 8080:3000
+    environment:
+        - NODE_ENV=development
+        - PORT=3000
+        - MONGODB_URI=mongodb://127.0.0.1:27017/filter-app
+        - DONT_SEED=true
+    depends_on:
+      - mongo
+        
+  # Mongo Service
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    ports:
+      - 27017:27017

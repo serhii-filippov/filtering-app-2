@@ -1,0 +1,38 @@
+{
+   "name": "filtering-app-v2",
+   "version": "1.0.0",
+   "description": "Some project developed for ClickUp",
+   "scripts": {
+      "seed": "node ./dist/application/utils/dbSeed.js",
+      "start": "node ./dist/index.js",
+      "build": "rimraf dist && tsc -p tsconfig-build.json",
+      "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts"
+   },
+   "dependencies": {
+      "@tsclean/core": "^1.6.8",
+      "bcrypt": "^5.0.1",
+      "dotenv": "^10.0.0",
+      "faker": "^6.6.6",
+      "helmet": "^4.6.0",
+      "jsonwebtoken": "^8.5.1",
+      "module-alias": "^2.2.2",
+      "mongoose": "^6.12.7"
+   },
+   "devDependencies": {
+      "@faker-js/faker": "^8.4.1",
+      "@types/bcrypt": "^5.0.0",
+      "@types/jest": "^27.0.1",
+      "@types/jsonwebtoken": "^8.5.5",
+      "@types/mongoose": "^5.11.97",
+      "@types/node": "^16.9.1",
+      "body-parser": "^1.20.2",
+      "nodemon": "^2.0.9",
+      "rimraf": "^3.0.2",
+      "ts-jest": "^27.0.5",
+      "ts-node": "^10.2.1",
+      "typescript": "^4.4.3"
+   },
+   "_moduleAliases": {
+      "@": "dist"
+   }
+}
